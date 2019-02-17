@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     var img = document.createElement('img');
-    img.src = '/assets/img/file_2594336.png';
+    img.src = 'assets/img/file_2594336.png';
     img.onload = function () {
         var canvas = document.createElement('canvas');
         canvas.width = 512;

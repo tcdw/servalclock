@@ -1,7 +1,0 @@
-{
-  "name": "servalclock",
-  "version": "1.0.0",
-  "description": "Let a serval tell you the time",
-  "author": "tcdw <tcdw2011@gmail.com>",
-  "license": "MIT"
-}
