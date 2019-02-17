@@ -1,0 +1,72 @@
+body {
+    margin: 1em;
+    background-color: #43a047;
+    font-family: "lucida grande",
+        "lucida sans unicode",
+        "Helvetica Neue",
+        "Tahoma",
+        "PingFang SC",
+        "Hiragino Sans GB",
+        "Source Han Sans CN Normal",
+        "Heiti SC",
+        "Microsoft YaHei",
+        "WenQuanYi Micro Hei",
+        "SimSun",
+        sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 1em;
+    box-sizing: border-box;
+    padding-top: 0;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    box-shadow: rgba(0, 0, 0, 0.12) .25em .25em 1em .25em;
+}
+
+.container header {
+    text-align: center;
+    padding: 1.5em 0;
+    box-sizing: border-box;
+}
+
+.container header h1 {
+    margin: 0;
+}
+
+.container .description .image {
+    text-align: center;
+}
+
+.container .description .image canvas {
+    width: 100%;
+    max-width: 25em;
+}
+
+/* https://github.com/tholman/github-corners */
+
+.github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+    0%, 100% {
+        transform: rotate(0);
+    }
+    20%, 60% {
+        transform: rotate(-25deg);
+    }
+    40%, 80% {
+        transform: rotate(10deg);
+    }
+}
+
+@media (max-width: 1000px) {
+    .github-corner {
+        display: none;
+    }
+}
