@@ -41,6 +41,9 @@
         }
 
         document.getElementById('container').appendChild(canvas);
+        document.getElementById('dl-btn').addEventListener('click', function() {
+            download(canvas, 'serval_' + str + '.png');
+        });
     }
 
     var bg = 'rgb(' +
@@ -49,4 +52,20 @@
         Math.floor(Math.random() * 256) + ')';
     document.getElementById('github-bg').style.color = bg;
     document.body.style.backgroundColor = bg;
+    
+    // http://stackoverflow.com/questions/18480474/how-to-save-an-image-from-canvas
+    function download(canvas, filename) {
+        var lnk = document.createElement('a'), e;
+        lnk.download = filename;
+        lnk.href = canvas.toDataURL("image/png;base64");
+        if (document.createEvent) {
+            e = document.createEvent("MouseEvents");
+            e.initMouseEvent("click", true, true, window,
+                0, 0, 0, 0, 0, false, false, false,
+                false, 0, null);
+            lnk.dispatchEvent(e);
+        } else if (lnk.fireEvent) {
+            lnk.fireEvent("onclick");
+        }
+    }
 })();
