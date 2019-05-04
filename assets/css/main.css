@@ -47,6 +47,17 @@ body {
     max-width: 25em;
 }
 
+.container button {
+    -webkit-appearance: none;
+    border: 0;
+    padding: 0.5em 2em;
+    font-size: 1.2em;
+    font-family: "lucida grande", "lucida sans unicode", "Helvetica Neue", "Tahoma", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN Normal", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "SimSun", sans-serif;
+    font-weight: bold;
+    border-radius: 0.4em;
+    background-color: #e8e8e8;
+}
+
 /* https://github.com/tholman/github-corners */
 
 .github-corner:hover .octo-arm {
