@@ -2,11 +2,11 @@
     'use strict';
     var img = document.createElement('img');
     img.src = 'assets/img/file_2594336.png';
-    img.onload = function () {
-        var canvas = document.createElement('canvas');
-        canvas.width = 512;
-        canvas.height = 512;
-
+    var canvas = document.createElement('canvas');
+    canvas.width = 512;
+    canvas.height = 512;
+    document.getElementById('container').appendChild(canvas);
+    function render() {
         var ctx = canvas.getContext('2d');
         ctx.fillStyle = "#fff";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -39,12 +39,13 @@
         for (var i = 0; i < str.length; i++) {
             ctx.fillText(str[i], startX, startY + addY * i);
         }
-
-        document.getElementById('container').appendChild(canvas);
         document.getElementById('dl-btn').addEventListener('click', function() {
             download(canvas, 'serval_' + str + '.png');
         });
+        setTimeout(render, 60000);
     }
+
+    img.onload = render;
 
     var bg = 'rgb(' +
         Math.floor(Math.random() * 256) + ', ' +
