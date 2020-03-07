@@ -6,6 +6,8 @@
     canvas.width = 512;
     canvas.height = 512;
     document.getElementById('container').appendChild(canvas);
+    
+    var str = "";
     function render() {
         var ctx = canvas.getContext('2d');
         ctx.fillStyle = "#fff";
@@ -17,7 +19,7 @@
             '七', '八', '九', '十', '十一', '十二',
             '十三', '十四', '十五', '十六', '十七', '十八',
             '十九', '二十', '二十一', '二十二', '二十三'];
-        var str = hourStrs[now.getHours()] + '点';
+        str = hourStrs[now.getHours()] + '点';
         if (now.getMinutes() > 0) {
             var upperStrs = ['零', '十', '二十', '三十', '四十', '五十'];
             var lowerStrs = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
@@ -47,9 +49,10 @@
 
     // 先绘制 placeholder
     var ctx = canvas.getContext('2d');
-    ctx.fillStyle = "#bbb";
+    ctx.fillStyle = "#ccc";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.font = '18px SimHei, STHeiti';
+    ctx.fillStyle = "#000";
     ctx.fillText("Loading...", 20, 20);
     
     img.onload = render;
