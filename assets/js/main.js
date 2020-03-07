@@ -39,12 +39,19 @@
         for (var i = 0; i < str.length; i++) {
             ctx.fillText(str[i], startX, startY + addY * i);
         }
-        document.getElementById('dl-btn').addEventListener('click', function() {
-            download(canvas, 'serval_' + str + '.png');
-        });
         setTimeout(render, 60000);
     }
+    document.getElementById('dl-btn').addEventListener('click', function() {
+        download(canvas, 'serval_' + str + '.png');
+    });
 
+    // 先绘制 placeholder
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = "#bbb";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.font = '18px SimHei, STHeiti';
+    ctx.fillText("Loading...", 20, 20);
+    
     img.onload = render;
 
     var bg = 'rgb(' +
