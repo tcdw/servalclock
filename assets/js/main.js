@@ -1,10 +1,10 @@
 (function () {
     'use strict';
     var img = document.createElement('img');
-    img.src = 'assets/img/file_2594336.png';
+    img.src = 'assets/img/src_hq.png';
     var canvas = document.createElement('canvas');
-    canvas.width = 512;
-    canvas.height = 512;
+    canvas.width = 1024;
+    canvas.height = 1024;
     document.getElementById('container').appendChild(canvas);
     
     var str = "";
@@ -32,10 +32,10 @@
         //       啊 啊 啊 啊 啊 啊
         //     ->      268       <-
         var baseLength = str.length - 4;
-        var startX = 445 - (48 - (22 * (baseLength / 5))) / 2;
-        var startY = 16;
-        var addY = (268 - (5 - baseLength) * 4) / (str.length - 1);
-        ctx.font = 48 - (22 * (baseLength / 5)) + 'px SimHei, STHeiti';
+        var startX = 890 - (96 - (44 * (baseLength / 5))) / 2;
+        var startY = 32;
+        var addY = (536 - (10 - baseLength) * 4) / (str.length - 1);
+        ctx.font = 96 - (44 * (baseLength / 5)) + 'px SimHei, STHeiti';
         ctx.fillStyle = "#000";
         ctx.textBaseline = 'top';
         for (var i = 0; i < str.length; i++) {
@@ -51,18 +51,22 @@
     var ctx = canvas.getContext('2d');
     ctx.fillStyle = "#ccc";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.font = '18px SimHei, STHeiti';
+    ctx.font = '40px SimHei, STHeiti';
     ctx.fillStyle = "#000";
-    ctx.fillText("Loading...", 20, 20);
+    ctx.fillText("Loading...", 50, 50);
     
     img.onload = render;
 
-    var bg = 'rgb(' +
-        Math.floor(Math.random() * 256) + ', ' +
-        Math.floor(Math.random() * 256) + ', ' +
-        Math.floor(Math.random() * 256) + ')';
-    document.getElementById('github-bg').style.color = bg;
-    document.body.style.backgroundColor = bg;
+    function changeBG() {
+        var bg = 'rgb(' +
+            Math.floor(Math.random() * 256) + ', ' +
+            Math.floor(Math.random() * 256) + ', ' +
+            Math.floor(Math.random() * 256) + ')';
+        document.getElementById('github-bg').style.color = bg;
+        document.body.style.backgroundColor = bg;
+        setTimeout(changeBG, 10000);
+    }
+    changeBG();
     
     // http://stackoverflow.com/questions/18480474/how-to-save-an-image-from-canvas
     function download(canvas, filename) {

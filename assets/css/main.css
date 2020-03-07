@@ -1,6 +1,7 @@
 body {
     margin: 1em;
-    background-color: #43a047;
+    background-color: #000;
+    transition: background-color 3s;
     font-family: "lucida grande",
         "lucida sans unicode",
         "Helvetica Neue",
@@ -44,7 +45,7 @@ body {
 
 .container .description .image canvas {
     width: 100%;
-    max-width: 25em;
+    max-width: 30em;
 }
 
 .container button {
