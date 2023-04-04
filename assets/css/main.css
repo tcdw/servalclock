@@ -40,7 +40,8 @@ body {
 }
 
 .container .description .image {
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .container .description .image canvas {
@@ -50,6 +51,7 @@ body {
 
 .container button {
     -webkit-appearance: none;
+    appearance: none;
     border: 0;
     padding: 0.5em 2em;
     font-size: 1.2em;

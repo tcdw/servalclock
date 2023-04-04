@@ -15,10 +15,10 @@
         ctx.drawImage(img, 0, 0);
 
         var now = new Date();
-        var hourStrs = ['零', '一', '两', '三', '四', '五', '六',
-            '七', '八', '九', '十', '十一', '十二',
-            '十三', '十四', '十五', '十六', '十七', '十八',
-            '十九', '二十', '二十一', '二十二', '二十三'];
+        var hourStrs = ['零', '一', '两', '三', '四', '五', 
+            '六', '七', '八', '九', '十', '十一',
+            '十二', '十三', '十四', '十五', '十六', '十七',
+            '十八', '十九', '二十', '二十一', '二十二', '二十三'];
         str = hourStrs[now.getHours()] + '点';
         if (now.getMinutes() > 0) {
             var upperStrs = ['零', '十', '二十', '三十', '四十', '五十'];
@@ -73,14 +73,6 @@
         var lnk = document.createElement('a'), e;
         lnk.download = filename;
         lnk.href = canvas.toDataURL("image/png;base64");
-        if (document.createEvent) {
-            e = document.createEvent("MouseEvents");
-            e.initMouseEvent("click", true, true, window,
-                0, 0, 0, 0, 0, false, false, false,
-                false, 0, null);
-            lnk.dispatchEvent(e);
-        } else if (lnk.fireEvent) {
-            lnk.fireEvent("onclick");
-        }
+        lnk.click();
     }
 })();
