@@ -49,7 +49,7 @@ body {
     max-width: 30em;
 }
 
-.container button {
+.action-btn {
     -webkit-appearance: none;
     appearance: none;
     border: 0;
@@ -59,6 +59,11 @@ body {
     font-weight: bold;
     border-radius: 0.4em;
     background-color: #e8e8e8;
+    cursor: pointer;
+}
+
+.action-btn + .action-btn {
+    margin-inline-start: 1rem;
 }
 
 /* https://github.com/tholman/github-corners */
