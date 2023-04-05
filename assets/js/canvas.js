@@ -1,4 +1,4 @@
-let canvas, img, str;
+let canvas, img;
 
 // 画布及渲染计时器初始化
 export function initCanvas() {
@@ -24,7 +24,7 @@ export function initCanvas() {
 // 下载画布内容为 PNG 文件
 export function downloadCanvas() {
     var lnk = document.createElement('a');
-    lnk.download = 'serval_' + str + '.png';
+    lnk.download = 'serval_' + canvas.title + '.png';
     lnk.href = canvas.toDataURL("image/png;base64");
     document.body.appendChild(lnk);
     lnk.click();
@@ -48,7 +48,7 @@ function render() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(img, 0, 0);
 
-    str = "";
+    let str = "";
     var now = new Date();
     var hourStrs = ['零', '一', '两', '三', '四', '五', 
         '六', '七', '八', '九', '十', '十一',
@@ -61,6 +61,7 @@ function render() {
         str += upperStrs[Math.floor(now.getMinutes() / 10)] + lowerStrs[now.getMinutes() % 10] + '分';
     }
     str += '了！';
+    canvas.title = str;
 
     // 字数范围：4 - 9
     // 268 是指从第一个字的开始到最后一个字结束的位置
