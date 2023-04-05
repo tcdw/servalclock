@@ -78,6 +78,12 @@ function render() {
         ctx.fillText(str[i], startX, startY + addY * i);
     }
 
+    // 绘制水印
+    const watermark = "https://tcdw.github.io/servalclock/";
+    ctx.font = '30px SimHei, STHeiti';
+    ctx.fillStyle = "#88888880";
+    ctx.fillText(watermark, 20, 1024 - 30 - 20);
+
     // 改变背景色
     changeBG();
     setTimeout(render, 10000);
